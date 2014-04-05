@@ -1,0 +1,22 @@
+Movement:	RobotController --> MotionController --> UDP 6001
+
+Sim:		UDP 6001 --> MotionListener --> VFF_Sim
+Flight:		UDP 6001 --> C I2C Controller --> ArduPilot --> Gyro --> ESC's
+
+-------------------------------------------------------------------------
+
+Telemetry:	UDP 6002 --> SensorManager --> RobotController
+
+Sim:		VFF_Sim --> TelemetrySender --> UDP 6002
+Flight:		ArduIMU --> C Serial Controller --> UDP 6002
+
+-------------------------------------------------------------------------
+
+Command:		UDP 6003 --> RobotController
+
+Sim:		VFF_Sim --> UDP 6003
+Flight:		Smartphone --> UDP 6003
+
+-------------------------------------------------------------------------
+
+Demo:		DemoController --> MotionController --> UDP 6001
